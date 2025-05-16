@@ -1,0 +1,39 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.shows{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 2rem;
+
+    &__title{
+        font-size: 140%;
+    }
+
+    &__list{
+        list-style: none;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+        overflow: hidden;
+        overflow-x: scroll;
+        width: 100%;
+
+        &::-webkit-scrollbar{
+            display: none;
+        }
+    }
+
+    &__item{
+        &--image{
+            width: 14rem;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 0.2rem;
+        }
+    }
+}

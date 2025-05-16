@@ -1,0 +1,45 @@
+@use "../../abstracts/variables";
+@use "../../abstracts/mixins";
+
+.header{
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 20rem;
+
+    &__logo{
+        text-decoration: none;
+        color: map-get(variables.$baseVars, "color");
+        font-size: 150%;
+        font-weight: 600;
+    }
+
+    &__navigation{
+        @include mixins.flexBox;
+        gap: 2rem;
+
+        &--user{
+            @include mixins.flexBox;
+            gap: 1rem;
+
+            &-name{
+                text-transform: uppercase;
+                font-size: 85%;
+            }
+
+            &-image{
+                width: 3.5rem;
+                aspect-ratio: 1/1;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+        }
+
+        &--auth{
+            text-decoration: none;
+            color: map-get(variables.$baseVars, "color");
+            font-size: 80%;
+        }
+    }
+}
